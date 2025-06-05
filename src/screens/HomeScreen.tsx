@@ -1,18 +1,34 @@
-// src/screens/HomeScreen.tsx
 import React from 'react';
-import { View, Text, Button } from 'react-native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../types/navigation';
+import { View, Text, StyleSheet } from 'react-native';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
-
-const HomeScreen: React.FC<Props> = ({ navigation }) => {
+export default function HomeScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>🏠 Home Screen</Text>
-      <Button title="Go to Profile" onPress={() => navigation.navigate('Profile', { userId: '123' })} />
+    <View style={{ flex: 1 }}>
+      <View style={styles.header}>
+        <Text style={styles.title}>BeastHub</Text>
+      </View>
+
+      {/* Rest of your home screen UI */}
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Welcome to BeastHub Home!</Text>
+      </View>
     </View>
   );
-};
+}
 
-export default HomeScreen;
+const styles = StyleSheet.create({
+  header: {
+    height: 60,
+    paddingHorizontal: 15,
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#ccc',
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#519FBA', // Your blue highlight color
+    fontFamily: '', // Ensure you have this font installed
+  },
+});
